@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #message {
+            font-size: 3rem;
+            color: deeppink;
+        }
+        .red {
+            color: red;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .text-center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="message">Hello World!</h1>
+    <p>Lipsum ezfezf...</p>
+
+    <ul id="list">
+        <li><a href="#">Google</a></li>
+        <li><a href="#">Google</a></li>
+    </ul>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        var age = prompt("Quel age avez-vous:");
+        //var age = 26;
+        var firstName = "Tibo";
+        var lastName = "Ba";
+        var hello = "Bonjour " + firstName + " " + lastName + " vous avez " + age + " ans";
+        var message = $("#message");
+        
+        function multiply(a, b, c) {
+            return a * b * c;
+        }
+        
+        function log(m) {
+            message.innerText = m;
+            console.log(m);
+        }
+
+        if (confirm("Somker?")) {
+            log(hello);
+        } else {
+            log("Bad");
+        }
+
+        message.on("click", function () {
+            message.css("color", "yellow");
+        });
+
+        message.on("mouseenter", function () {
+            message.css("color", "cyan");
+            $("#list").slideUp(500);
+        });
+
+        message.on("mouseout", function () {
+            message.css("color", "green");
+            $("#list").slide(500);
+        });
+    </script>
+</body>
+</html>
